@@ -139,6 +139,10 @@
 			<span id="generatelabelbitcoinaddress">Generating Bitcoin Address...</span><br />
 			<span id="generatelabelmovemouse">MOVE your mouse around to add some extra randomness... </span><span id="mousemovelimit"></span><br />
 			<span id="generatelabelkeypress">OR type some random characters into this textbox</span> <input type="text" id="generatekeyinput" onkeypress="ninja.seeder.seedKeyPress(event);" /><br />
+			<span id="seedSkipper">
+				<input type="button" id="seedskip" value="Skip &raquo;" onclick="ninja.seeder.seedCount = ninja.seeder.seedLimit; ninja.seeder.seed();">
+				<p id="seedskiptip1">You may skip this step if you do not plan to use the random key generator.</p>
+			</span>
 			<div id="seedpooldisplay"></div>
 		</div>
 
