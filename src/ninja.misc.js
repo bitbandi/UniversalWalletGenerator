@@ -20,7 +20,7 @@ ninja.seeder = {
 		// seeding is over now we generate and display the address
 		if (ninja.seeder.seedCount == ninja.seeder.seedLimit) {
 			ninja.seeder.seedCount++;
-			ninja.wallets.singlewallet.open();
+			ninja.wallets.setupwallet.open();
 			document.getElementById("generate").style.display = "none";
 			document.getElementById("menu").style.visibility = "visible";
 			ninja.seeder.removePoints();
@@ -42,7 +42,7 @@ ninja.seeder = {
 		// seeding is over now we generate and display the address
 		if (ninja.seeder.seedCount == ninja.seeder.seedLimit) {
 			ninja.seeder.seedCount++;
-			ninja.wallets.singlewallet.open();
+			ninja.wallets.setupwallet.open();
 			document.getElementById("generate").style.display = "none";
 			document.getElementById("menu").style.visibility = "visible";
 			ninja.seeder.removePoints();

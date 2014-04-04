@@ -28,6 +28,8 @@ body { font-family: Arial; }
 #seedpooldisplay {  font-family: monospace; font-size: 1em; width: 640px; padding: 15px 5px; word-wrap: break-word; }
 #seedSkipper { font-size: 11px; text-align: center; line-height: 14px; float: right; width: 170px; }
 .seedpoint { width: 6px; height: 6px; display: block; border-radius: 3px; background-color: green; position: absolute; z-index: 10; }
+#setuparea { font-size: 90%; }
+#setupsafety { text-align: left; padding: 5px; position: relative; }
 #generate { font-family: monospace; font-size: 1.25em; height: 305px; text-align: left; position: relative; padding: 5px; border: 2px solid green; }
 #generate span { padding: 5px 5px 0 5px; }
 #generatekeyinput { position: relative; z-index: 20; }
@@ -181,6 +183,8 @@ body { font-family: Arial; }
 @media print
 {
 	#main { width: auto; }
+	#setuparea { border: 0; }
+	#setupsafety { border: 0; }
 	#singlearea { border: 0; }
 	#singlesafety { border: 0; }
 	#paperarea .keyarea:first-child { border-top: 2px solid green; }
