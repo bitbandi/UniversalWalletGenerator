@@ -32,7 +32,7 @@ ninja.translator = {
 		"en": {
 			// javascript alerts or messages
 			"testneteditionactivated": "TESTNET EDITION ACTIVATED",
-			"paperlabelbitcoinaddress": "Bitcoin Address:",
+			"paperlabelbitcoinaddress": "Public Address:",
 			"paperlabelprivatekey": "Private Key (Wallet Import Format):",
 			"paperlabelencryptedkey": "Encrypted Private Key (Password required)",
 			"bulkgeneratingaddresses": "Generating addresses... ",
@@ -136,7 +136,7 @@ ninja.translator = {
 			"brainlabelconfirm": "Confirmar contraseña:",
 			"brainview": "Ver",
 			"brainalgorithm": "Algoritmo: SHA256(contraseña)",
-			"brainlabelbitcoinaddress": "Dirección Bitcoin:",
+			"brainlabelbitcoinaddress": "Dirección pública:",
 			"brainlabelprivatekey": "Clave privada (formato para importar):",
 
 			// vanity wallet html
@@ -270,7 +270,7 @@ ninja.translator = {
 			"brainlabelconfirm": "Confirmer le mot de passe: ",
 			"brainview": "Visualiser",
 			"brainalgorithm": "Algorithme: SHA256(mot de passe)",
-			"brainlabelbitcoinaddress": "Adresse Bitcoin:",
+			"brainlabelbitcoinaddress": "Adresse Publique:",
 			"brainlabelprivatekey": "Clé Privée (Format d'importation de porte-monnaie):",
 
 			// vanity wallet html
@@ -404,7 +404,7 @@ ninja.translator = {
 			"brainlabelconfirm": "Επιβεβαιώστε τον κωδικό: ",
 			"brainview": "Δημιουργία",
 			"brainalgorithm": "Αλγόριθμος: SHA256(κωδικός)",
-			"brainlabelbitcoinaddress": "Διεύθυνση Bitcoin:",
+			"brainlabelbitcoinaddress": "Διεύθυνση Δημόσιο:",
 			"brainlabelprivatekey": "Προσωπικό Κλειδί (Μορφή εισαγωγής σε πορτοφόλι):",
 			
 			// vanity wallet html
@@ -539,7 +539,7 @@ ninja.translator = {
 			"brainlabelconfirm": "Conferma Passphrase: ",
 			"brainview": "Visiona",
 			"brainalgorithm": "Algoritmo: SHA256(passphrase)",
-			"brainlabelbitcoinaddress": "Indirizzo Bitcoin:",
+			"brainlabelbitcoinaddress": "Indirizzo pubblica:",
 			"brainlabelprivatekey": "Chiave privata (Wallet Import Format):",
 
 			// vanity wallet html
@@ -673,7 +673,7 @@ ninja.translator = {
 			"brainlabelconfirm": "Passphrase wiederholen:",
 			"brainview": "Zugehöriges Wallet anzeigen",
 			"brainalgorithm": "Algorithmus: SHA256 (Passphrase)",
-			"brainlabelbitcoinaddress": "Bitcoin-Adresse:",
+			"brainlabelbitcoinaddress": "&Ouml;ffentlicher-Adresse:",
 			"brainlabelprivatekey": "Privater Schl&uuml;ssel (WIF):",
 
 			// vanity wallet html
@@ -809,7 +809,7 @@ ninja.translator = {
 			"brainlabelconfirm": "Heslo znovu:",
 			"brainview": "Zobrazit",
 			"brainalgorithm": "Algoritmus: SHA256 (Heslo)",
-			"brainlabelbitcoinaddress": "Bitcoin adresa:",
+			"brainlabelbitcoinaddress": "Veřejný adresa:",
 			"brainlabelprivatekey": "Soukromý klíč (WIF &ndash; Formát pro import do peněženky):",
 
 			// vanity wallet html
