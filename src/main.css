@@ -47,7 +47,7 @@ body { font-family: Arial; }
 #singlesafety { text-align: left; padding: 5px; border-top: 2px solid green; top: -25px; position: relative; }
 
 #main { position: relative; text-align: center; margin: 0px auto; width: 1005px; }
-#logo { width: 578px; height: 80px; }
+#logo { width: 578px; height: 80px; line-height: 90px; font-size: 290%; }
 		
 #paperarea { min-height: 120px; display: none; }
 #paperarea .keyarea { border: 2px solid green; border-top: 0; }
