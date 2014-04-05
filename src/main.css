@@ -30,6 +30,13 @@ body { font-family: Arial; }
 .seedpoint { width: 6px; height: 6px; display: block; border-radius: 3px; background-color: green; position: absolute; z-index: 10; }
 #setuparea { font-size: 90%; }
 #setupsafety { text-align: left; padding: 5px; position: relative; }
+#setupinputs { text-align: left; padding: 10px 2px; border-bottom: 0px; }
+#setupinfoarea { display: none; text-align: left; position: relative; padding: 15px; border-top: 2px solid green; }
+#setupinfolabel { padding-left: 5px; }
+#setuptable .dt { display:table; width:auto; background-color:#f9f9f9; border:1px solid #666666; }
+#setuptable .dth { font-weight: bold; text-align: center; display:table-row; width:auto; clear:both; background-color:#f2f2f2; }
+#setuptable .dtr { display:table-row; width:auto; clear:both; }
+#setuptable .dtc { float:left;/*fix for  buggy browsers*/ display:table-column; border:1px solid #aaa; width:150px; }
 #generate { font-family: monospace; font-size: 1.25em; height: 305px; text-align: left; position: relative; padding: 5px; border: 2px solid green; }
 #generate span { padding: 5px 5px 0 5px; }
 #generatekeyinput { position: relative; z-index: 20; }

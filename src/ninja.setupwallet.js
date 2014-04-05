@@ -6,6 +6,8 @@ ninja.wallets.setupwallet = {
 
 	close: function () {
 		document.getElementById("setuparea").style.display = "none";
+		document.getElementById("setupinfoarea").style.display = "none";
+		document.getElementById("setupinfoicon").setAttribute("class", "more");
 	},
 
 	toggleAutoPrivateKeyPrefix: function (element) {
@@ -69,4 +71,17 @@ ninja.wallets.setupwallet = {
 				ninja.wallets.setupwallet.setAddress(0, 128, true);
 		}
 	},
+
+	openCloseHelp: function () {
+		// do close
+		if (document.getElementById("setupinfoarea").style.display == "block") {
+			document.getElementById("setupinfoarea").style.display = "none";
+			document.getElementById("setupinfoicon").setAttribute("class", "more");
+		}
+		// do open
+		else {
+			document.getElementById("setupinfoarea").style.display = "block";
+			document.getElementById("setupinfoicon").setAttribute("class", "less");
+		}
+	}
 };
