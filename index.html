@@ -6024,10 +6024,21 @@ body { font-family: Arial; }
 								<option value="btctest">Bitcoin Testnet</option>
 								<option value="ltc">Litecoin</option>
 								<option value="ltctest">Litecoin Testnet</option>
+								<option value="aur">AuroraCoin</option>
+								<option value="bbq">BBQCoin</option>
+								<option value="doge">DogeCoin</option>
+								<option value="tips">FedoraCoin</option>
+								<option value="ftc">FeatherCoin</option>
+								<option value="moon">MoonCoin</option>
+								<option value="nmc">NameCoin</option>
+								<option value="ppc">PeerCoin</option>
+								<option value="rdd">ReddCoin</option>
+								<option value="rpc">RonPaulCoin</option>
+								<option value="vtc">VertCoin</option>
+								<option value="wdc">WorldCoin</option>
 								<option value="custom">Custom</option>
 							</select>
 						</span>
-						<span><input type="button" id="setupparameters" onclick="ninja.wallets.setupwallet.setParameters(this);" value="Setup"></span>
 					</div>
 					<div id="setuppubliccommands" class="row extra">
 						<span>
@@ -6050,6 +6061,7 @@ body { font-family: Arial; }
 								<option value="140">140</option><option value="141">141</option><option value="142">142</option><option value="143">143</option><option value="144">144</option>
 							</select>
 						</span>
+						<span><input type="button" id="setupparameters" onclick="ninja.wallets.setupwallet.setParameters(this);" value="Setup"></span>
 					</div>
 					<div id="setupprivcommands" class="row extra">
 						<span><label id="setuplabelautoPrivateKeyPrefix" for="setupautoPrivateKeyPrefix">Auto setup private key prefix</label><input type="checkbox" id="setupautoPrivateKeyPrefix" onchange="ninja.wallets.setupwallet.toggleAutoPrivateKeyPrefix(this);"></span>
@@ -7981,12 +7993,12 @@ ninja.wallets.setupwallet = {
 		}
 	},
 
-	setAddress: function (privkey, pubkey, enable) {
+	setAddress: function (pubkey, privkey, enable) {
 		var networkVersion = document.getElementById("setupnetworkVersion");
 		var privateKeyPrefix = document.getElementById("setupprivateKeyPrefix");
 		var autoPrivateKeyPrefix = document.getElementById("setupautoPrivateKeyPrefix");
-		networkVersion.value = privkey;
-		privateKeyPrefix.value = pubkey;
+		networkVersion.value = pubkey;
+		privateKeyPrefix.value = privkey;
 		networkVersion.disabled = !enable;
 		privateKeyPrefix.disabled = true;
 		autoPrivateKeyPrefix.disabled = !enable;
@@ -7997,16 +8009,56 @@ ninja.wallets.setupwallet = {
 	setupPresets: function (element) {
 		switch (document.getElementById("setupaddresspresets").value) {
 			case "btc":
+			case "btcs":
 				ninja.wallets.setupwallet.setAddress(0, 128, false);
 				break;
 			case "btctest":
-				ninja.wallets.setupwallet.setAddress(0, 128, false);
+				ninja.wallets.setupwallet.setAddress(111, 239, false);
 				break;
 			case "ltc":
 				ninja.wallets.setupwallet.setAddress(48, 176, false);
 				break;
 			case "ltctest":
 				ninja.wallets.setupwallet.setAddress(111, 239, false);
+				break;
+			case "aur":
+				ninja.wallets.setupwallet.setAddress(23, 239, false);
+				break;
+			case "bbq":
+				ninja.wallets.setupwallet.setAddress(85, 213, false);
+				break;
+			case "doge":
+				ninja.wallets.setupwallet.setAddress(30, 158, false);
+				break;
+			case "dogetest":
+				ninja.wallets.setupwallet.setAddress(113, 241, false);
+				break;
+			case "ftc":
+				ninja.wallets.setupwallet.setAddress(14, 142, false);
+				break;
+			case "moon":
+				ninja.wallets.setupwallet.setAddress(3, 131, false);
+				break;
+			case "nmc":
+				ninja.wallets.setupwallet.setAddress(52, 128, false);
+				break;
+			case "ppc":
+				ninja.wallets.setupwallet.setAddress(55, 183, false);
+				break;
+			case "rdd":
+				ninja.wallets.setupwallet.setAddress(61, 189, false);
+				break;
+			case "rpc":
+				ninja.wallets.setupwallet.setAddress(60, 188, false);
+				break;
+			case "tips":
+				ninja.wallets.setupwallet.setAddress(33, 161, false);
+				break;
+			case "vtc":
+				ninja.wallets.setupwallet.setAddress(71, 199, false);
+				break;
+			case "wdc":
+				ninja.wallets.setupwallet.setAddress(73, 201, false);
 				break;
 			default:
 				ninja.wallets.setupwallet.setAddress(0, 128, true);
