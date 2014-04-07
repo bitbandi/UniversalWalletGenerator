@@ -56,16 +56,56 @@ ninja.wallets.setupwallet = {
 	setupPresets: function (element) {
 		switch (document.getElementById("setupaddresspresets").value) {
 			case "btc":
+			case "btcs":
 				ninja.wallets.setupwallet.setAddress(0, 128, false);
 				break;
 			case "btctest":
-				ninja.wallets.setupwallet.setAddress(0, 128, false);
+				ninja.wallets.setupwallet.setAddress(111, 239, false);
 				break;
 			case "ltc":
 				ninja.wallets.setupwallet.setAddress(48, 176, false);
 				break;
 			case "ltctest":
 				ninja.wallets.setupwallet.setAddress(111, 239, false);
+				break;
+			case "aur":
+				ninja.wallets.setupwallet.setAddress(23, 239, false);
+				break;
+			case "bbq":
+				ninja.wallets.setupwallet.setAddress(85, 213, false);
+				break;
+			case "doge":
+				ninja.wallets.setupwallet.setAddress(30, 158, false);
+				break;
+			case "dogetest":
+				ninja.wallets.setupwallet.setAddress(113, 241, false);
+				break;
+			case "ftc":
+				ninja.wallets.setupwallet.setAddress(14, 142, false);
+				break;
+			case "moon":
+				ninja.wallets.setupwallet.setAddress(3, 131, false);
+				break;
+			case "nmc":
+				ninja.wallets.setupwallet.setAddress(52, 128, false);
+				break;
+			case "ppc":
+				ninja.wallets.setupwallet.setAddress(55, 183, false);
+				break;
+			case "rdd":
+				ninja.wallets.setupwallet.setAddress(61, 189, false);
+				break;
+			case "rpc":
+				ninja.wallets.setupwallet.setAddress(60, 188, false);
+				break;
+			case "tips":
+				ninja.wallets.setupwallet.setAddress(33, 161, false);
+				break;
+			case "vtc":
+				ninja.wallets.setupwallet.setAddress(71, 199, false);
+				break;
+			case "wdc":
+				ninja.wallets.setupwallet.setAddress(73, 201, false);
 				break;
 			default:
 				ninja.wallets.setupwallet.setAddress(0, 128, true);
