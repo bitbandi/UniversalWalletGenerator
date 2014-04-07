@@ -40,12 +40,12 @@ ninja.wallets.setupwallet = {
 		}
 	},
 
-	setAddress: function (privkey, pubkey, enable) {
+	setAddress: function (pubkey, privkey, enable) {
 		var networkVersion = document.getElementById("setupnetworkVersion");
 		var privateKeyPrefix = document.getElementById("setupprivateKeyPrefix");
 		var autoPrivateKeyPrefix = document.getElementById("setupautoPrivateKeyPrefix");
-		networkVersion.value = privkey;
-		privateKeyPrefix.value = pubkey;
+		networkVersion.value = pubkey;
+		privateKeyPrefix.value = privkey;
 		networkVersion.disabled = !enable;
 		privateKeyPrefix.disabled = true;
 		autoPrivateKeyPrefix.disabled = !enable;
