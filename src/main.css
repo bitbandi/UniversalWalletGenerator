@@ -55,6 +55,8 @@ body { font-family: Arial; }
 
 #main { position: relative; text-align: center; margin: 0px auto; width: 1005px; }
 #logo { width: 578px; height: 80px; line-height: 90px; font-size: 290%; }
+#setupinfo { margin: 0 0 15px 0; display: none; }
+#setupinfoDetails { display: none; }
 		
 #paperarea { min-height: 120px; display: none; }
 #paperarea .keyarea { border: 2px solid green; border-top: 0; }
@@ -144,6 +146,7 @@ body { font-family: Arial; }
 @media screen 	
 {
 	#tagline { margin: 0 0 15px 0; font-style: italic; }
+	#setupinfo { margin: 0 0 15px 0; font-style: italic; }
 	.menu { text-align: left; }
 	.menu .tab { border-top-left-radius: 5px; border-top-right-radius: 5px; display: inline-block; background-color: #6C8C6C;
 					border: 2px solid green; padding: 5px; margin: 0 2px 0 0; position: relative; top: 2px; z-index: 110; cursor: pointer; }
@@ -190,6 +193,7 @@ body { font-family: Arial; }
 @media print
 {
 	#main { width: auto; }
+	#setupinfo { display: block; }
 	#setuparea { border: 0; }
 	#setupsafety { border: 0; }
 	#singlearea { border: 0; }

@@ -18,6 +18,7 @@ ninja.wallets.setupwallet = {
 	setParameters: function (element) {
 		var networkVersion = parseInt(document.getElementById("setupnetworkVersion").value);
 		var privateKeyPrefix = parseInt(document.getElementById("setupprivateKeyPrefix").value);
+		var addresspresets = document.getElementById("setupaddresspresets");
 		Bitcoin.Address.networkVersion = networkVersion;
 		Bitcoin.ECKey.privateKeyPrefix = privateKeyPrefix;
 		ninja.tabSwitch(document.getElementById("singlewallet"));
@@ -29,6 +30,14 @@ ninja.wallets.setupwallet = {
 		ninja.wallets.detailwallet.clear();
 		document.getElementById("detailcompwifprefix").innerHTML = ninja.wallets.setupwallet.getPrivKeyCompressedStart(privateKeyPrefix);
 		document.getElementById("detailwifprefix").innerHTML = ninja.wallets.setupwallet.getPrivKeyStart(privateKeyPrefix);
+		document.getElementById("setupinfoAddresspresets").innerHTML = addresspresets.options[addresspresets.selectedIndex].text;
+		if (addresspresets.value == "custom") {
+			document.getElementById("setupinfoNetworkVersion").innerHTML = networkVersion;
+			document.getElementById("setupinfoPrivateKeyPrefix").innerHTML = privateKeyPrefix;
+			document.getElementById("setupinfoDetails").style.display = "block";
+		} else {
+			document.getElementById("setupinfoDetails").style.display = "none";
+		}
 	},
 
 	setPrivateKeyPrefix: function(element) {
