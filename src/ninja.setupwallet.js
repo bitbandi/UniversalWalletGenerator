@@ -210,11 +210,17 @@ ninja.wallets.setupwallet = {
 			case "ltctest":
 				ninja.wallets.setupwallet.setAddress(111, 239, false);
 				break;
+			case "66":
+				ninja.wallets.setupwallet.setAddress(0, 128, false);
+				break;
 			case "aur":
 				ninja.wallets.setupwallet.setAddress(23, 239, false);
 				break;
 			case "bbq":
 				ninja.wallets.setupwallet.setAddress(85, 213, false);
+				break;
+			case "cesc": // CryptoEscudo
+				ninja.wallets.setupwallet.setAddress(28, 156, false);
 				break;
 			case "doge":
 				ninja.wallets.setupwallet.setAddress(30, 158, false);
@@ -225,14 +231,38 @@ ninja.wallets.setupwallet = {
 			case "ftc":
 				ninja.wallets.setupwallet.setAddress(14, 142, false);
 				break;
+			case "gpuc": // GPUCoin
+				ninja.wallets.setupwallet.setAddress(38, 166, false);
+				break;
+			case "grp": // Graphene
+				ninja.wallets.setupwallet.setAddress(98, 226, false);
+				break;
+			case "jny": // JennyCoin
+				ninja.wallets.setupwallet.setAddress(43, 171, false);
+				break;
+			case "kdc":
+				ninja.wallets.setupwallet.setAddress(47, 175, false);
+				break;
+			case "kgc": // Krugercoin
+				ninja.wallets.setupwallet.setAddress(79, 207, false);
+				break;
 			case "moon":
 				ninja.wallets.setupwallet.setAddress(3, 131, false);
 				break;
 			case "nmc":
 				ninja.wallets.setupwallet.setAddress(52, 128, false);
 				break;
+			case "plnc": // PLNcoin
+				ninja.wallets.setupwallet.setAddress(22, 150, false);
+				break;
+			case "pop": // PopularCoin
+				ninja.wallets.setupwallet.setAddress(58, 186, false);
+				break;
 			case "ppc":
 				ninja.wallets.setupwallet.setAddress(55, 183, false);
+				break;
+			case "rby":
+				ninja.wallets.setupwallet.setAddress(61, 189, false);
 				break;
 			case "rdd":
 				ninja.wallets.setupwallet.setAddress(61, 189, false);
@@ -240,8 +270,17 @@ ninja.wallets.setupwallet = {
 			case "rpc":
 				ninja.wallets.setupwallet.setAddress(60, 188, false);
 				break;
+			case "soc": // SocialCoin
+				ninja.wallets.setupwallet.setAddress(63, 128, false);
+				break;
 			case "tips":
 				ninja.wallets.setupwallet.setAddress(33, 161, false);
+				break;
+			case "tes":
+				ninja.wallets.setupwallet.setAddress(11, 139, false);
+				break;
+			case "vgc": // Vegascoin
+				ninja.wallets.setupwallet.setAddress(58, 186, false);
 				break;
 			case "vtc":
 				ninja.wallets.setupwallet.setAddress(71, 199, false);
