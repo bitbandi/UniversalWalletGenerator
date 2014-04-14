@@ -61,7 +61,6 @@ ninja.wallets.setupwallet = {
 		privateKeyPrefix.disabled = true;
 		autoPrivateKeyPrefix.disabled = !enable;
 		autoPrivateKeyPrefix.checked = true;
-		privateKeyPrefix.value = parseInt(networkVersion.value) + 128;
 	},
 
 	getPrivKeyStart: function (key) {
