@@ -3,11 +3,22 @@ ninja.wallets.setupwallet = {
 		var addresspresets = document.getElementById("setupaddresspresets");
 		var custom = addresspresets.firstElementChild;
 		var presets = ninja.wallets.setupwallet.addresspresets;
+		var optgroup = null;
 		for(var p in presets) {
+			var pdata = presets[p];
 			var el = document.createElement("option");
-			el.textContent = presets[p][1];
+			el.textContent = pdata[1];
 			el.value = p;
-			addresspresets.insertBefore(el, custom);
+			if (p > 1) {
+				if (optgroup == null || optgroup.label[0] != pdata[1][0]) {
+					optgroup = document.createElement("optgroup");
+					optgroup.label = pdata[1][0];
+					addresspresets.insertBefore(optgroup, custom);
+				}
+				optgroup.appendChild(el);
+			} else {
+				addresspresets.insertBefore(el, custom);
+			}
 		}
 		addresspresets.selectedIndex = 0;
 	},
