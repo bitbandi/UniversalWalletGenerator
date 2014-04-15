@@ -221,6 +221,9 @@ ninja.wallets.setupwallet = {
 			case "cesc": // CryptoEscudo
 				ninja.wallets.setupwallet.setAddress(28, 156, false);
 				break;
+			case "col":
+				ninja.wallets.setupwallet.setAddress(2, 130, false);
+				break;
 			case "doge":
 				ninja.wallets.setupwallet.setAddress(30, 158, false);
 				break;
