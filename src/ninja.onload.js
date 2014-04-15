@@ -1,3 +1,4 @@
+ninja.wallets.setupwallet.init();
 // run unit tests
 if (ninja.getQueryString()["unittests"] == "true" || ninja.getQueryString()["unittests"] == "1") {
 	ninja.unitTests.runSynchronousTests();
