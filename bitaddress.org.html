@@ -6032,36 +6032,6 @@ body { font-family: Arial; }
 						<span>
 							<label id="setuplabelpresets" for="addresspresets">Presets currency:</label>
 							<select id="setupaddresspresets" onchange="ninja.wallets.setupwallet.setupPresets(this);">
-								<option value="btc">Bitcoin</option>
-								<option value="btctest">Bitcoin Testnet</option>
-								<option value="ltc">Litecoin</option>
-								<option value="ltctest">Litecoin Testnet</option>
-								<option value="66">66Coin</option>
-								<option value="aur">AuroraCoin</option>
-								<option value="bbq">BBQCoin</option>
-								<option value="cesc">CryptoEscudo</option>
-								<option value="col">ColossusCoin</option>
-								<option value="doge">DogeCoin</option>
-								<option value="tips">FedoraCoin</option>
-								<option value="ftc">FeatherCoin</option>
-								<option value="gpuc">GpuCoin</option>
-								<option value="grp">Graphene</option>
-								<option value="jny">JennyCoin</option>
-								<option value="kdc">KlondikeCoin</option>
-								<option value="kgc">KrugerCoin</option>
-								<option value="moon">MoonCoin</option>
-								<option value="nmc">NameCoin</option>
-								<option value="plnc">PLNCoin</option>
-								<option value="pop">PopularCoin</option>
-								<option value="ppc">PeerCoin</option>
-								<option value="rby">RubyCoin</option>
-								<option value="rdd">ReddCoin</option>
-								<option value="rpc">RonPaulCoin</option>
-								<option value="soc">SocialCoin</option>
-								<option value="tes">TeslaCoin</option>
-								<option value="vgc">VegasCoin</option>
-								<option value="vtc">VertCoin</option>
-								<option value="wdc">WorldCoin</option>
 								<option value="custom">Custom</option>
 							</select>
 						</span>
@@ -7972,6 +7942,30 @@ ninja.translator.showEnglishJson = function () {
 	</script>
 	<script type="text/javascript">
 ninja.wallets.setupwallet = {
+	init: function () {
+		var addresspresets = document.getElementById("setupaddresspresets");
+		var custom = addresspresets.firstElementChild;
+		var presets = ninja.wallets.setupwallet.addresspresets;
+		var optgroup = null;
+		for(var p in presets) {
+			var pdata = presets[p];
+			var el = document.createElement("option");
+			el.textContent = pdata[1];
+			el.value = p;
+			if (p > 1) {
+				if (optgroup == null || optgroup.label[0] != pdata[1][0]) {
+					optgroup = document.createElement("optgroup");
+					optgroup.label = pdata[1][0];
+					addresspresets.insertBefore(optgroup, custom);
+				}
+				optgroup.appendChild(el);
+			} else {
+				addresspresets.insertBefore(el, custom);
+			}
+		}
+		addresspresets.selectedIndex = 0;
+	},
+
 	open: function () {
 		ninja.wallets.setupwallet.setupPresets();
 		document.getElementById("setuparea").style.display = "block";
@@ -8168,103 +8162,12 @@ ninja.wallets.setupwallet = {
 	},
 
 	setupPresets: function (element) {
-		switch (document.getElementById("setupaddresspresets").value) {
-			case "btc":
-			case "btcs":
-				ninja.wallets.setupwallet.setAddress(0, 128, false);
-				break;
-			case "btctest":
-				ninja.wallets.setupwallet.setAddress(111, 239, false);
-				break;
-			case "ltc":
-				ninja.wallets.setupwallet.setAddress(48, 176, false);
-				break;
-			case "ltctest":
-				ninja.wallets.setupwallet.setAddress(111, 239, false);
-				break;
-			case "66":
-				ninja.wallets.setupwallet.setAddress(0, 128, false);
-				break;
-			case "aur":
-				ninja.wallets.setupwallet.setAddress(23, 239, false);
-				break;
-			case "bbq":
-				ninja.wallets.setupwallet.setAddress(85, 213, false);
-				break;
-			case "cesc": // CryptoEscudo
-				ninja.wallets.setupwallet.setAddress(28, 156, false);
-				break;
-			case "col":
-				ninja.wallets.setupwallet.setAddress(2, 130, false);
-				break;
-			case "doge":
-				ninja.wallets.setupwallet.setAddress(30, 158, false);
-				break;
-			case "dogetest":
-				ninja.wallets.setupwallet.setAddress(113, 241, false);
-				break;
-			case "ftc":
-				ninja.wallets.setupwallet.setAddress(14, 142, false);
-				break;
-			case "gpuc": // GPUCoin
-				ninja.wallets.setupwallet.setAddress(38, 166, false);
-				break;
-			case "grp": // Graphene
-				ninja.wallets.setupwallet.setAddress(98, 226, false);
-				break;
-			case "jny": // JennyCoin
-				ninja.wallets.setupwallet.setAddress(43, 171, false);
-				break;
-			case "kdc":
-				ninja.wallets.setupwallet.setAddress(47, 175, false);
-				break;
-			case "kgc": // Krugercoin
-				ninja.wallets.setupwallet.setAddress(79, 207, false);
-				break;
-			case "moon":
-				ninja.wallets.setupwallet.setAddress(3, 131, false);
-				break;
-			case "nmc":
-				ninja.wallets.setupwallet.setAddress(52, 128, false);
-				break;
-			case "plnc": // PLNcoin
-				ninja.wallets.setupwallet.setAddress(22, 150, false);
-				break;
-			case "pop": // PopularCoin
-				ninja.wallets.setupwallet.setAddress(58, 186, false);
-				break;
-			case "ppc":
-				ninja.wallets.setupwallet.setAddress(55, 183, false);
-				break;
-			case "rby":
-				ninja.wallets.setupwallet.setAddress(61, 189, false);
-				break;
-			case "rdd":
-				ninja.wallets.setupwallet.setAddress(61, 189, false);
-				break;
-			case "rpc":
-				ninja.wallets.setupwallet.setAddress(60, 188, false);
-				break;
-			case "soc": // SocialCoin
-				ninja.wallets.setupwallet.setAddress(63, 128, false);
-				break;
-			case "tips":
-				ninja.wallets.setupwallet.setAddress(33, 161, false);
-				break;
-			case "tes":
-				ninja.wallets.setupwallet.setAddress(11, 139, false);
-				break;
-			case "vgc": // Vegascoin
-				ninja.wallets.setupwallet.setAddress(58, 186, false);
-				break;
-			case "vtc":
-				ninja.wallets.setupwallet.setAddress(71, 199, false);
-				break;
-			case "wdc":
-				ninja.wallets.setupwallet.setAddress(73, 201, false);
-				break;
-			default:
-				ninja.wallets.setupwallet.setAddress(0, 128, true);
+		var addresspresets = document.getElementById("setupaddresspresets").value;
+		if (addresspresets == "custom") {
+			ninja.wallets.setupwallet.setAddress(0, 128, true);
+		} else {
+			var presets = ninja.wallets.setupwallet.addresspresets[addresspresets];
+			ninja.wallets.setupwallet.setAddress(presets[2], presets[3], false);
 		}
 	},
 
@@ -8281,6 +8184,43 @@ ninja.wallets.setupwallet = {
 		}
 	}
 };
+	</script>
+	<script type="text/javascript">
+ninja.wallets.setupwallet.addresspresets = [
+	[ "btc",	"Bitcoin",		0,	128 ],
+	[ "ltc",	"Litecoin",		48,	176 ],
+	[ "66",		"66Coin",		0,	128 ],
+	[ "aur",	"AuroraCoin",		23,	239 ],
+	[ "bbq",	"BBQCoin",		85,	213 ],
+	[ "btcs",	"Bitcoin Scrypt",	0,	128 ],
+	[ "btctest",	"Bitcoin Testnet",	111,	239 ],
+	[ "col",	"ColossusCoin",		2,	130 ],
+	[ "cesc",	"CryptoEscudo",		28,	156 ],
+	[ "doge",	"DogeCoin",		30,	158 ],
+	[ "dogetest",	"DogeCoin Testnet",	113,	241 ],
+	[ "ftc",	"FeatherCoin",		14,	142 ],
+	[ "tips",	"FedoraCoin",		33,	161 ],
+	[ "gpuc",	"GpuCoin",		38,	166 ],
+	[ "grp",	"Graphene",		98,	226 ],
+	[ "jny",	"JennyCoin",		43,	171 ],
+	[ "kdc",	"KlondikeCoin",		47,	175 ],
+	[ "kgc",	"KrugerCoin",		79,	207 ],
+	[ "ltctest",	"Litecoin Testnet",	111,	239 ],
+	[ "moon",	"MoonCoin",		3,	131 ],
+	[ "nmc",	"NameCoin",		52,	128 ],
+	[ "plnc",	"PLNCoin",		22,	150 ],
+	[ "ppc",	"PeerCoin",		55,	183 ],
+	[ "pop",	"PopularCoin",		58,	186 ],
+	[ "rdd",	"ReddCoin",		61,	189 ],
+	[ "rpc",	"RonPaulCoin",		60,	188 ],
+	[ "rby",	"RubyCoin",		61,	189 ],
+	[ "soc",	"SocialCoin",		63,	128 ],
+	[ "tes",	"TeslaCoin",		11,	139 ],
+	[ "vgc",	"VegasCoin",		58,	186 ],
+	[ "vtc",	"VertCoin",		71,	199 ],
+	[ "wdc",	"WorldCoin",		73,	201 ],
+];
+
 	</script>
 	<script type="text/javascript">
 ninja.wallets.singlewallet = {
@@ -9577,6 +9517,7 @@ ninja.wallets.detailwallet = {
 })(ninja);
 	</script>
 	<script type="text/javascript">
+ninja.wallets.setupwallet.init();
 // run unit tests
 if (ninja.getQueryString()["unittests"] == "true" || ninja.getQueryString()["unittests"] == "1") {
 	ninja.unitTests.runSynchronousTests();
