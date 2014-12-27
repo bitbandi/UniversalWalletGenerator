@@ -80,6 +80,9 @@
 //ellipticcurve.js
 	</script>
 	<script type="text/javascript">
+//secrets.js
+	</script>
+	<script type="text/javascript">
 //biginteger.js
 	</script>
 	<script type="text/javascript">
@@ -120,7 +123,9 @@
 			<span><a href="?culture=el" id="cultureel">ελληνικά</a></span> | 
 			<span><a href="?culture=it" id="cultureit">italiano</a></span> | 
 			<span><a href="?culture=de" id="culturede">Deutsch</a></span> | 
-			<span><a href="?culture=cs" id="culturecs">Česky</a></span>
+			<span><a href="?culture=cs" id="culturecs">Česky</a></span> | 
+			<span><a href="?culture=hu" id="culturehu">Magyar</a></span> | 
+			<span><a href="?culture=jp" id="culturejp">日本語</a></span>
 		</div>
 		<div id="logo">Universal Wallet Generator</div>
 		<div id="tagline">Open Source JavaScript Client-Side Wallet Generator</div>
@@ -134,20 +139,21 @@
 				<span id="setupinfoPrivateKeyPrefix">128</span>
 			</div>
 		</div>
-		<div class="menu" id="menu">
-			<div class="tab selected" id="setupwallet" onclick="ninja.tabSwitch(this);">Setup</div>
-			<div class="tab" id="singlewallet" onclick="ninja.tabSwitch(this);">Single Wallet</div>
-			<div class="tab" id="paperwallet" onclick="ninja.tabSwitch(this);">Paper Wallet</div>
-			<div class="tab" id="bulkwallet" onclick="ninja.tabSwitch(this);">Bulk Wallet</div>
-			<div class="tab" id="brainwallet" onclick="ninja.tabSwitch(this);">Brain Wallet</div>
-			<div class="tab" id="vanitywallet" onclick="ninja.tabSwitch(this);">Vanity Wallet</div>
-			<div class="tab" id="detailwallet" onclick="ninja.tabSwitch(this);">Wallet Details</div>
-		</div>
+		<ul class="menu" id="menu">
+			<li class="tab selected" id="setupwallet" onclick="ninja.tabSwitch(this);">Setup
+			<li class="tab" id="singlewallet" onclick="ninja.tabSwitch(this);">Single Wallet
+			<li class="tab" id="paperwallet" onclick="ninja.tabSwitch(this);">Paper Wallet
+			<li class="tab" id="bulkwallet" onclick="ninja.tabSwitch(this);">Bulk Wallet
+			<li class="tab" id="brainwallet" onclick="ninja.tabSwitch(this);">Brain Wallet
+			<li class="tab" id="vanitywallet" onclick="ninja.tabSwitch(this);">Vanity Wallet
+			<li class="tab" id="splitwallet" onclick="ninja.tabSwitch(this);">Split Wallet
+			<li class="tab" id="detailwallet" onclick="ninja.tabSwitch(this);">Wallet Details
+		</ul>
 		
 		<div id="generate">
 			<span id="generatelabelbitcoinaddress">Generating Wallet Address...</span><br />
 			<span id="generatelabelmovemouse">MOVE your mouse around to add some extra randomness... </span><span id="mousemovelimit"></span><br />
-			<span id="generatelabelkeypress">OR type some random characters into this textbox</span> <input type="text" id="generatekeyinput" onkeypress="ninja.seeder.seedKeyPress(event);" /><br />
+			<span id="generatelabelkeypress">OR type some random characters into this textbox</span> <input type="text" id="generatekeyinput" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
 			<span id="seedSkipper">
 				<input type="button" id="seedskip" value="Skip &raquo;" onclick="ninja.seeder.seedCount = ninja.seeder.seedLimit; ninja.seeder.seed();">
 				<p id="seedskiptip1">You may skip this step if you do not plan to use the random key generator.</p>
@@ -475,6 +481,33 @@
 				</div>
 			</div>
 
+			<div id="splitarea" class="walletarea">
+				<div id="splitcommands" class="commands " >
+					<label id="splitlabelthreshold">Minimum share threshold needed to combine</label>
+					<input type="text" id="splitthreshold" value="2" size="4"/>
+					<br/>
+					<label id="splitlabelshares">Number of shares</label>
+					<input type="text" id="splitshares" value="3" size="4"/>
+					<span><input type="button" id="splitview" value="Generate" onclick="ninja.wallets.splitwallet.splitKey();"></span>
+					<div id="splitstep1icon" class="more " onclick="ninja.wallets.splitwallet.openCloseStep(1);"></div>
+				</div>
+				<div id="splitstep1area"></div>
+
+				<div id="combinecommands" class="left commands">
+					<span>
+						<label id="combinelabelentershares">Enter Available Shares (whitespace separated)</label><br/>
+						<textarea id="combineinput" cols="60" rows="10"></textarea><br/>
+					</span>
+					<span><input type="button" id="combineview" value="Combine Shares" onclick="ninja.wallets.splitwallet.combineShares();"></span>
+				</div>
+				<div id="splitstep2area">
+					<div id="combineoutput">
+						<label id="combinelabelprivatekey">Combined Private Key</label>
+						<div id="combinedprivatekey" class="output"></div>
+					</div>
+				</div>
+			</div>
+
 			<div id="detailarea" class="walletarea">	
 				<div id="detailcommands" class="commands">
 					<span><label id="detaillabelenterprivatekey" for="detailprivkey">Enter Private Key</label></span>
@@ -491,7 +524,7 @@
 				</div>
 				<div id="detailkeyarea">
 					<div class="notes">
-						<span id="detaillabelnote1">Your Private Key is a unique secret number that only you know. It can be encoded in a number of different formats. Below we show the Public Address and Public Key that corresponds to your Private Key as well as your Private Key in the most popular encoding formats (WIF, WIFC, HEX, B64, MINI).</span>
+						<span id="detaillabelnote1">Your Private Key is a unique secret number that only you know. It can be encoded in a number of different formats. Below we show the Public Address and Public Key that corresponds to your Private Key as well as your Private Key in the most popular encoding formats (WIF, WIFC, HEX, B64).</span>
 						<br /><br />
 						<span id="detaillabelnote2">Bitcoin v0.6+ stores public keys in compressed format. The client now also supports import and export of private keys with importprivkey/dumpprivkey. The format of the exported private key is determined by whether the address was generated in an old or new wallet.</span>
 					</div>
@@ -563,6 +596,7 @@
 			</div>
 		</div>
 
+
 		<div id="footer" class="footer">
 			<div class="authorbtc">
 				<div>
@@ -620,6 +654,9 @@
 	</script>
 	<script type="text/javascript">
 //ninja.detailwallet.js
+	</script>
+	<script type="text/javascript">
+//ninja.splitwallet.js
 	</script>
 	<script type="text/javascript">
 //ninja.unittests.js
