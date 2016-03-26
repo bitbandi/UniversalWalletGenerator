@@ -1,4 +1,8 @@
 ninja.wallets.brainwallet = {
+    isOpen: function () {
+        return (document.getElementById("brainwallet").className.indexOf("selected") != -1);
+    },
+
 	open: function () {
 		document.getElementById("brainarea").style.display = "block";
 		document.getElementById("brainpassphrase").focus();
@@ -22,6 +26,8 @@ ninja.wallets.brainwallet = {
 			if (key.length >= ninja.wallets.brainwallet.minPassphraseLength) {
 				var bytes = Crypto.SHA256(key, { asBytes: true });
 				var btcKey = new Bitcoin.ECKey(bytes);
+				var isCompressed = document.getElementById("braincompressed").checked;
+				btcKey.setCompressed(isCompressed);
 				var bitcoinAddress = btcKey.getBitcoinAddress();
 				var privWif = btcKey.getBitcoinWalletImportFormat();
 				document.getElementById("brainbtcaddress").innerHTML = bitcoinAddress;

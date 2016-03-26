@@ -1,4 +1,8 @@
 ninja.wallets.setupwallet = {
+	isOpen: function () {
+		return (document.getElementById("setupwallet").className.indexOf("selected") != -1);
+	},
+
 	init: function () {
 		var addresspresets = document.getElementById("setupaddresspresets");
 		var custom = addresspresets.firstElementChild;
@@ -45,8 +49,7 @@ ninja.wallets.setupwallet = {
 		var addresspresets = document.getElementById("setupaddresspresets");
 		Bitcoin.Address.networkVersion = networkVersion;
 		Bitcoin.ECKey.privateKeyPrefix = privateKeyPrefix;
-		ninja.tabSwitch(document.getElementById("singlewallet"));
-		ninja.wallets.singlewallet.generateNewAddressAndKey();
+		document.getElementById("btcaddress").innerHTML = "";
 		document.getElementById("paperkeyarea").innerHTML = "";
 		document.getElementById("bulktextarea").value = "";
 		ninja.wallets.brainwallet.clear();
@@ -62,6 +65,7 @@ ninja.wallets.setupwallet = {
 		} else {
 			document.getElementById("setupinfoDetails").style.display = "none";
 		}
+		ninja.tab.select("singlewallet");
 	},
 
 	setPrivateKeyPrefix: function(element) {

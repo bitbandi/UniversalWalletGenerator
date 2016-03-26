@@ -28,6 +28,44 @@ END USER NOTES:
 
 Here is a signed list of file names and version history.
 
+2016-02-19: status ACTIVE
+bitaddress.org-v3.2.0-SHA256-ad4fd171c647772aa76d0ce828731b01ca586596275d43a94008766b758e8736.html
+ - switch languages without full page load
+ - add BIP38 encryption to Bulk Wallet
+ - use compressed addresses on Single/Paper/Bulk Wallet 
+ - add compressed address option on Brain Wallet
+
+2016-01-17: status ACTIVE
+bitaddress.org-v3.1.1-SHA256-8277de0a0c77761caa8f546c9885c36a3134a94823b14e24d364b86abb3a9ab3.html
+ - refactor translations into separate files per culture.
+
+2015-11-22: status ACTIVE
+bitaddress.org-v3.1.0-SHA256-c3d4d8da8fc6980435a520dff562b7f831b2f6037ec2d4dd6bf76c5321873303.html
+ - add BIP38 encryption on Wallet Details tab.
+
+2015-10-25: status ACTIVE
+bitaddress.org-v3.0.1-SHA256-24d2d7f047a9aa217bf69f3ef344c972c151b1e3f6a8aa86ceb9a3be62884bc0.html
+ - fix for session log not keeping track of keys from "Wallet Details" tab before entropy is collected.
+
+2015-10-25: status ACTIVE
+bitaddress.org-v3.0.0-SHA256-4781574ca09c07f65d1966619f37a762aac6decd8732cacc85b2f2f972f82751.html
+ - add session log icon that shows all the key pairs generated during the current session.
+
+2015-08-16: status ACTIVE
+bitaddress.org-v2.9.11-SHA256-40376eddc790a63d9afcfb72c0a45002827da965f3bfe6ba8c330e697bf188b2.html
+ - add status icons for checking the URI protocol used, support for window.crypto.getRandomValues
+   and run the synchronous unit tests after entropy collection.
+
+2015-07-18: status ACTIVE
+bitaddress.org-v2.9.10-SHA256-445e44cfd04c8f1ea8f732c3ae7277b0166fdb3e2109251c54e4b367983fe04d.html
+ - add Portuguese. Thanks rhcastilhos.
+ - minor french updates.
+
+2015-07-05: status ACTIVE
+bitaddress.org-v2.9.9-SHA256-90ddaf250f6302acb53945128e38225208af5a2fa7cfdf51519213e8b144a76d.html
+ - improve tab usability. You can now get to the Brain Wallet and Wallet Details tabs before 
+   completing the entropy collection.
+
 2015-01-08: status ACTIVE
 bitaddress.org-v2.9.8-SHA256-2c5d16dbcde600147162172090d940fd9646981b7d751d9bddfc5ef383f89308.html
  - fix French translations. Escape quotes.
